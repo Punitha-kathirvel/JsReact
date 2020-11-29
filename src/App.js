@@ -19,7 +19,12 @@ export default class App extends React.Component {
   }
 
   handleSubmit(e) {
-
+    if(this.state.todovalue==''){
+      alert('Please fill out the field before adding the item!')
+      e.preventDefault();
+    }
+    else
+    {
     let todovalue = {
       id: Math.random(),
       value: this.state.todovalue
@@ -31,6 +36,7 @@ export default class App extends React.Component {
       list,
       todovalue: ''
     })
+    }
   }
 
   delete( id) {
@@ -46,19 +52,22 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="content">
+        <form>
         <h1>A TODO App</h1>
-        <input type="text" name='todovalue' placeholder='Enter your todo here!' value={this.state.todovalue} onChange={this.handleChange} />
-        <button className='btn' type="submit" onClick={this.handleSubmit}>Add Item</button>
+        <input type="text" name='todovalue' placeholder='Enter your todo here!' value={this.state.todovalue} onChange={this.handleChange} required/>
+        <button className='btn' type="button" onClick={this.handleSubmit}>Add Item</button>
         <br />
-
+        </form>
+        
         {
-          this.state.list.map(item =>
-              <li key={item.id}>{item.value}
-                <button className='btn' onClick={() => this.delete(item.id)}>Delete Item</button>
-              </li>       
+          this.state.list.map(item =>  <ul>
+              <li key={item.id}><span>{item.value}
+                <button className='btn' onClick={() => this.delete(item.id)}>Delete Item</button></span>
+              </li>  </ul>   
           )
         }
+         
       </div>
 
     );
