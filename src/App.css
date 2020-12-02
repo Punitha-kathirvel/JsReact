@@ -47,25 +47,21 @@ input {
 }
 .btn{
   margin: 20px;
-  padding: 6px;
+  padding: 7px;
   background-color: rgb(248, 155, 248);
 }
 
 .list{
   width: 90%;
-  height: 30px;
   text-align: left;
   border: 1px solid black;
   border-radius: 0%;
   position: relative;
-}
-p{
-  padding:10px;
+  padding:10px 25px 10px 10px;
   align-content: center;
-  position: relative;
-  border-spacing:10px;
 }
-p span{
+
+.list span{
   position: absolute;
   right: 10px;
 }
