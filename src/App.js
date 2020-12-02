@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { Button } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -67,18 +68,19 @@ export default class App extends React.Component {
         <form>
         <h1>A TODO App</h1>
         <input type="text" name='todovalue' placeholder='Enter your todo here!' value={this.state.todovalue} onChange={this.handleChange} onKeyDown={this.keyPress}/>
-        <button className="btn" type="button"onClick={this.handleSubmit}><AddIcon/></button>
+        <button className="btn" type="button"onClick={this.handleSubmit}>Add</button>
         <br />
         </form>
         
+        <div >
         {
-          this.state.list.map(item =>  <ul>
-              <li key={item.id}><span>{item.value}
-                <button className='btn' onClick={() => this.delete(item.id)}><DeleteIcon/></button></span>
-              </li>  </ul>   
+          this.state.list.map(item => 
+              <p class="list" key={item.id}>{item.value}
+                <span><DeleteIcon onClick={() => this.delete(item.id)}/></span>
+                </p> 
           )
         }
-         
+         </div>
       </div>
 
     );

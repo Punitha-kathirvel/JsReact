@@ -42,25 +42,37 @@ h1{
 input {
   width: 60%;
   height: 20px;
+  padding: 5px;
   background-color: rgb(247, 220, 245);
 }
-
 .btn{
-  margin: 10px;
+  margin: 20px;
+  padding: 6px;
   background-color: rgb(248, 155, 248);
 }
-ul{
-  width: 80%;
+
+.list{
+  width: 90%;
+  height: 30px;
   text-align: left;
+  border: 1px solid black;
+  border-radius: 0%;
+  position: relative;
 }
-
-
+p{
+  padding:10px;
+  align-content: center;
+  position: relative;
+  border-spacing:10px;
+}
+p span{
+  position: absolute;
+  right: 10px;
+}
 body{
   background: url("https://cdn.pixabay.com/photo/2015/10/29/14/38/web-1012467__340.jpg") ;
   background-size: cover;
   background-attachment: fixed;
- 
-  
 }
 .content{
   background-color: rgb(248, 205, 240);
@@ -68,4 +80,5 @@ body{
   width: 50%;
   padding-left: 40px;
   margin : 80px auto;
+  padding-bottom: 5px;
 }
